@@ -11,7 +11,7 @@ connection.connect(function (err) {
 });
 
 //building the ORM
-var orm = {
+const orm = {
   selectAll: (callback) => {
     connection.query("SELECT * FROM burgers", (err, result) => {
       if (err) throw err;
