@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(express.static("public"));
 
 // Use <burgers_controller.js> for selectAll, insertOne and updateOne methods
-const routes = require("burgers_controller.js");
+const routes = require("./controllers/burgers_controller.js");
 app.use(routes);
 
 // Use handlebars from <main.handlebars> file to display info to fronend
