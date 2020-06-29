@@ -13,14 +13,17 @@ router.get('/', (req, res) => {
 // Getting all burgers and feeding them to front end "/index" hitpoint
 router.get('/index',  (req, res) => {
   burger.selectAll( data => {
+    //take all info in burgers table and place into a variable
     const brgObject = { burgers: data };
-    //console.log(brgObject);
+    //render index file using that variable containing burgers table info
     res.render('index', brgObject);
   });
 });
 
 // Creating a new burger
 router.post('/burger/create', (req, res) => {
+  //take the data from front end with req.body.burger_name 
+  //and call insertOne method (defined in orm.js) to update table in db
   burger.insertOne(req.body.burger_name, () => {
     res.redirect('/index');
   });
@@ -28,6 +31,8 @@ router.post('/burger/create', (req, res) => {
 
 // Eating a Burger
 router.post('/burger/eat/:id', (req, res) => {
+  //take the specific id with req.params.id 
+  //and call updateOne method (defined in orm.js) to change the "devoured" state to true
   burger.updateOne(req.params.id, () => {
     res.redirect('/index');
   });

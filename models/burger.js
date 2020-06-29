@@ -1,10 +1,10 @@
 
 // Require orm
-var orm = require('../config/orm.js');
+const orm = require('../config/orm.js');
 
 
-// Creating burger model
-var burger = {
+// Creating burger model by using the methods in ORM
+const burger = {
 
   selectAll: callback => {
     orm.selectAll( res => {
