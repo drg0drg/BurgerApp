@@ -9,7 +9,7 @@ if (process.env.JAWSDB_URL) {
   connection = mysql.createConnection({
     host: "us-cdbr-east-02.cleardb.com",
     user: "b14bbf455c3347",
-    port: 3306,
+    port: process.env.PORT || 3306,
     password: "0f520a74",
     database: "burgers_db",
   });
