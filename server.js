@@ -13,11 +13,11 @@ app.use(express.json());
 // Use the folder <public> to feed info to front end
 app.use(express.static("public"));
 
-// Use <burgers_controller.js> for selectAll, insertOne and updateOne methods
+// Use <burgers_controller.js> for selectAll, insertOne and updateOne methods inside routes
 const routes = require("./controllers/burgers_controller.js");
 app.use(routes);
 
-// Use handlebars from <main.handlebars> file to display info to fronend
+// Use handlebars from <main.handlebars> file to display info to frontend
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 

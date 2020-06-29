@@ -1,14 +1,16 @@
 <div class="row">
   <!-- READY TO BE DEVOURED -->
   <div class="col-md-6">
-    <h4 class="red_font">Ready to be eaten!</h4>
-    <div id="ready_to_eat">
+    <h4>Ready to be eaten!</h4>
+    <div id="ready_to_be_eaten">
 
-      <!-- Handlebars to feed the information on front end -->
+      <!-- Handlebars to feed the information to front end -->
       {{#each burgers}}
       {{#unless devoured}}
+      <!--feed the "burger/eat/" route and id to use the router.post-> burger.updateOne method-->
       <form action="burger/eat/{{id}}" method="POST">
         <div class="input-group">
+          <!--feed the id and the burger name with handlebars "for each" <li>-->
           <li class="form-control">{{id}}. {{burger_name}}</li>
           <span class="input-group-btn">
             <button class="btn btn-success devour-button" type="submit">Devour
@@ -24,13 +26,14 @@
 
   <!-- ALREADY EATEN -->
   <div class="col-md-6">
-    <h4 class="red_font">Already eaten!</h4>
+    <h4>Already eaten!</h4>
     <div id="already_eaten">
 
       <!-- Handlebars to feed the information on front end -->
       {{#each burgers}}
       {{#if this.devoured}}
       <div class="input-group">
+        <!--feed the id and the burger name with handlebars "for each" <li>-->
         <li class="form-control">{{this.id}}. {{this.burger_name}}</li>
       </div>
       {{/if}}

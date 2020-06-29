@@ -52,6 +52,9 @@ Access the link:
 ## https://eat-the-burger-drg.herokuapp.com
 
 
+![BurgerAppGIF](https://user-images.githubusercontent.com/60710786/86014136-d9d74780-ba17-11ea-8d35-18e7a9e3f0c9.gif)
+
+
 
 ## Tests
     
