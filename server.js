@@ -1,6 +1,7 @@
 // Require express and express-handlebars
 const express = require("express");
 const exphbs = require("express-handlebars");
+require('dotenv').config();
 
 // Tell the app to use express. process.env.PORT for Heroku deployment(if not found, use 8080)
 const app = express();
